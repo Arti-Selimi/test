@@ -1,6 +1,28 @@
 {
-    "Navbar": {
-      "title": "Halo world!",
-      "about": "Wie Geht"
+  "Navbar": {
+    "title": "Willkommen in der Charakterliste",
+    "checkAPI": "Schau dir die API an",
+    "socials": "Meine sozialen Netzwerke"
+  },
+  "CharacterList": {
+    "loading": "Lädt...",
+    "error": "Es ist ein Fehler aufgetreten",
+    "loadMore": "Mehr laden",
+    "status": {
+      "Alive": "Lebendig",
+      "Dead": "Tot",
+      "unknown": "Unbekannt"
+    },
+    "species": {
+      "Human": "Mensch",
+      "Alien": "Außerirdischer",
+      "Robot": "Roboter"
+    },
+    "gender": {
+      "Male": "Männlich",
+      "Female": "Weiblich",
+      "Genderless": "Geschlechtslos",
+      "unknown": "Unbekannt"
     }
   }
+}

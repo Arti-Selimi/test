@@ -4,6 +4,7 @@ import { gql, useQuery } from "@apollo/client";
 import { CharactersData, CharactersVars } from "./types";
 import { InView } from "react-intersection-observer";
 import { useState, useEffect } from "react";
+import { useTranslations } from "next-intl";
 
 const GET_CHARACTERS = gql`
   query GetCharacters($page: Int!) {
@@ -15,6 +16,7 @@ const GET_CHARACTERS = gql`
         prev
       }
       results {
+        id
         name
         status
         species
@@ -27,10 +29,13 @@ const GET_CHARACTERS = gql`
     }
   }
 `;
-
 export default function CharacterList() {
+  const t = useTranslations("CharacterList");
   const [scroll, setScroll] = useState(false);
-  const { loading, error, data, fetchMore } = useQuery<CharactersData,CharactersVars>(GET_CHARACTERS, {
+  const { loading, error, data, fetchMore } = useQuery<
+    CharactersData,
+    CharactersVars
+  >(GET_CHARACTERS, {
     variables: { page: 1 },
   });
 
@@ -68,20 +73,20 @@ export default function CharacterList() {
 
   if (loading)
     return (
-      <p className="p-5 rounded-full bg-secondary text-white m-5">Loading...</p>
+      <p className="p-5 rounded-full bg-secondary text-white m-5">{t("loading")}</p>
     );
   if (error)
     return (
       <p className="p-5 rounded-full bg-red-600 text-white m-5">
-        Error: {error.message}
+        {t(`error` + `: ` + `${error.message}`)}
       </p>
     );
 
   return (
-    <div className="grid md:grid-cols-2 h-150 lg:h-200 xl:h-250 overflow-y-auto p-5 gap-5 bg-secondary m-5 rounded-2xl">
+    <div className="grid grid-cols-1 lg:grid-cols-2 h-135 xl:h-150 overflow-y-auto p-5 gap-5 bg-secondary m-5 rounded-2xl">
       {data?.characters.results.map((character) => (
         <div
-          key={character.name}
+          key={character.id}
           className="flex items-center justify-start bg-primary rounded-xl h-50 hover:shadow-[0_0_5px] cursor-pointer transition-all"
         >
           <img
@@ -89,7 +94,7 @@ export default function CharacterList() {
             alt={character.name}
             className="rounded-l-xl h-50"
           />
-          <div className="text-accent h-full w-full p-5 flex flex-col items-start">
+          <div className="text-accent h-full p-5 flex flex-col items-start">
             <div className="font-extrabold">
               <h1 className="text-2xl hover:text-secondary">
                 {character.name}
@@ -104,11 +109,11 @@ export default function CharacterList() {
                       : "bg-accent"
                   }`}
                 ></div>
-                {character.status} - {character.species}
+                {t(`status.${character.status}`)} - {t(`species.${character.species}`)}
               </div>
             </div>
             <div>
-              <p>{character.gender}</p>
+              <p>{t(`gender.${character.gender}`)}</p>
               <p>{character.origin.name}</p>
             </div>
           </div>
@@ -117,7 +122,7 @@ export default function CharacterList() {
 
       {data?.characters.info.next && (
         <InView
-          className="flex items-center justify-center w-full col-span-2"
+          className="flex items-center justify-center w-full lg:col-span-2"
           as="div"
           triggerOnce={true}
           onChange={(inView) => {
@@ -126,14 +131,12 @@ export default function CharacterList() {
             }
           }}
         >
-          {data.characters.info.next >= 2 &&(
-              <div
-                onClick={handleLoadMore}
-                className="flex items-center self-center justify-center p-5 rounded-full bg-primary text-white cursor-pointer"
-              >
-                Load More
-              </div>
-            )}
+            <div
+              onClick={handleLoadMore}
+              className={`flex items-center self-center justify-center p-5 rounded-full bg-primary text-white cursor-pointer ${data?.characters.info.next < 3 ? "hidden" : ""}`}
+            >
+              Load More
+            </div>
         </InView>
       )}
     </div>

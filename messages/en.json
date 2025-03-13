@@ -1,6 +1,28 @@
 {
-    "Navbar": {
-      "title": "Hello world!",
-      "about": "Go to the about page"
+  "Navbar": {
+    "title": "Welcome to the Character List",
+    "checkAPI": "Check out the API",
+    "socials": "My Socials"
+  },
+  "CharacterList": {
+    "loading": "Loading...",
+    "error": "Error occurred",
+    "loadMore": "Load More",
+    "status": {
+      "Alive": "Alive",
+      "Dead": "Dead",
+      "unknown": "Unknown"
+    },
+    "species": {
+      "Human": "Human",
+      "Alien": "Alien",
+      "Robot": "Robot"
+    },
+    "gender": {
+      "Male": "Male",
+      "Female": "Female",
+      "Genderless": "Genderless",
+      "unknown": "Unknown"
     }
   }
+}
