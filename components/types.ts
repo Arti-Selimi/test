@@ -12,6 +12,12 @@ export interface Character {
   
   export interface CharactersData {
     characters: {
+      info: {
+        pages: number;
+        next: number;
+        prev: number;
+        count: number;
+      };
       results: Character[];
     };
   }
