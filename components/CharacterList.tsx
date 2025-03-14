@@ -6,9 +6,10 @@ import { InView } from "react-intersection-observer";
 import { useState, useEffect } from "react";
 import { useTranslations } from "next-intl";
 import { GET_CHARACTERS } from "./API/get";
-import handleLoadMore from "./API/HandleLoad";
 import Sort from "./functions/sort";
 import Filter from "./functions/filter";
+import handleLoadMore from "./API/handleLoad";
+import Image from "next/image";
 
 export default function CharacterList() {
   const t = useTranslations("CharacterList");
@@ -16,7 +17,7 @@ export default function CharacterList() {
   const [selectedSort, setSelectedSort] = useState("default");
   const [filterOptions, setFilterOptions] = useState<string[]>([]);
 
-  const { loading, error, data } = useQuery<
+  const { loading, error, data, fetchMore } = useQuery<
     CharactersData,
     CharactersVars
   >(GET_CHARACTERS, {
@@ -69,10 +70,12 @@ export default function CharacterList() {
               key={character.id}
               className="flex items-center justify-start bg-primary rounded-xl h-50 hover:shadow-[0_0_5px] cursor-pointer transition-all"
             >
-              <img
+              <Image
                 src={character.image}
                 alt={character.name}
-                className="rounded-l-xl h-50"
+                width={150}
+                height={150}
+                className="rounded-l-xl h-50 w-auto"
               />
               <div className="text-accent h-full p-5 flex flex-col items-start">
                 <div className="font-extrabold">
@@ -107,13 +110,13 @@ export default function CharacterList() {
             triggerOnce={true}
             onChange={(inView) => {
               if (inView && scroll) {
-                handleLoadMore({ scroll, setScroll, data });
+                handleLoadMore({ scroll, setScroll, data, fetchMore });
               }
             }}
           >
             <div
               onClick={() =>
-                handleLoadMore({ scroll, setScroll, data })
+                handleLoadMore({ scroll, setScroll, data, fetchMore })
               }
               className={`flex items-center self-center justify-center p-5 rounded-full bg-primary text-white cursor-pointer ${
                 data?.characters?.info?.next < 3 ? "hidden" : ""

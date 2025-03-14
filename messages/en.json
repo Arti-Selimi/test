@@ -87,7 +87,6 @@
   },
   "sort": {
     "default": "Sort",
-    "sort": "Sort",
     "nameAsc": "Name (A-Z)",
     "nameDesc": "Name (Z-A)",
     "originAsc": "Origin (A-Z)",

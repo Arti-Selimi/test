@@ -4,7 +4,7 @@ import { useTranslations } from "next-intl";
 import { CharactersData, Character } from "../types";
 
 type Props = {
-  data: CharactersData;
+  data: CharactersData | undefined;
   onSortChange: (value: string) => void;
   setCharacters: React.Dispatch<React.SetStateAction<Character[]>>;
   selectedSort: string;
@@ -19,15 +19,17 @@ export default function Sort({
   const t = useTranslations("sort");
   const [selectedValue, setSelectedValue] = useState<string>("");
 
-  const handleDropdownChange = (selectedOption: { value: string; label: string } | null) => {
+  const handleDropdownChange = (
+    selectedOption: { value: string; label: string } | null
+  ) => {
     if (!selectedOption) return;
-    
+
     const value = selectedOption.value;
-    
+
     if (value === "default") {
       setSelectedValue("");
-      onSortChange(""); 
-      setCharacters(data.characters.results); 
+      onSortChange("");
+      setCharacters(data?.characters?.results ?? []);
       return;
     }
 
@@ -68,22 +70,26 @@ export default function Sort({
   return (
     <Select
       options={[
-        { value: "default", label: t("default") }, 
+        { value: "default", label: t("default") },
         { value: "nameAsc", label: t("nameAsc") },
         { value: "nameDesc", label: t("nameDesc") },
         { value: "originAsc", label: t("originAsc") },
         { value: "originDesc", label: t("originDesc") },
       ]}
-      value={{ value: selectedValue, label: t(`${selectedValue}`) }} 
+      value={
+        selectedValue
+          ? { value: selectedValue, label: t(selectedValue) ?? t("default") }
+          : { value: "default", label: t("default") }
+      }
       onChange={handleDropdownChange}
       placeholder={t("default")}
       className="w-70 font-l p-1"
       styles={{
         control: (provided) => ({
           ...provided,
-          backgroundColor: "#001124", 
-          borderColor: "#64748B", 
-          color: "#F1F5F9", 
+          backgroundColor: "#001124",
+          borderColor: "#64748B",
+          color: "#F1F5F9",
           borderRadius: "8px",
         }),
         option: (provided) => ({
@@ -95,7 +101,7 @@ export default function Sort({
           ":hover": {
             backgroundColor: "#A35852",
             color: "#FFFFFF",
-          }
+          },
         }),
         singleValue: (provided) => ({
           ...provided,
