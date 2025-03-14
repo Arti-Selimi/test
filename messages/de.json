@@ -1,4 +1,11 @@
 {
+  "Footer": {
+    "English": "Englisch",
+    "German": "Deutsche",
+    "2025": "2025",
+    "company_name": "Arti",
+    "rights_reserved": "Alle Rechte vorbehalten"
+    },
   "Navbar": {
     "title": "Willkommen in der Charakterliste",
     "checkAPI": "Schau dir die API an",
@@ -14,9 +21,62 @@
       "unknown": "Unbekannt"
     },
     "species": {
-      "Human": "Mensch",
       "Alien": "Außerirdischer",
-      "Robot": "Roboter"
+      "Animal": "Tier",
+      "Humanoid": "Humanoid",
+      "unknown": "Unbekannt",
+      "Poopybutthole": "Poopybutthole",
+      "Mythological Creature": "Mythologische Kreatur",
+      "Robot": "Robot",
+      "Disease": "Disease",
+      "Alphabetrian": "Alphabetrier",
+      "Amfiddian": "Amfiddianer",
+      "Arbolian Mentirososian": "Arbolianischer Mentirososianer",
+      "Bepisian": "Bepisianer",
+      "Bird Person": "Vogelmensch",
+      "Blamph": "Blamph",
+      "Bliznarvian": "Bliznarvier",
+      "Bluubosian": "Bluubosianer",
+      "Boobloosian": "Boobloosianer",
+      "Borpocian": "Borpocianer",
+      "Brogh": "Brogh",
+      "Brosephamon": "Brosephamonier",
+      "Buttmouth": "Buttmund",
+      "Changeformer": "Gestaltwandler",
+      "Chud": "Chud",
+      "Ciancan": "Ciancaner",
+      "Courier Flap": "Kurierklappe",
+      "Crittendian": "Krittendianer",
+      "Cromulon": "Cromulon",
+      "Cronenberg": "Cronenberg-Wesen",
+      "Crow Alien": "Krähen-Alien",
+      "Crustolomon": "Krustolomonier",
+      "Dangelian": "Dangelianer",
+      "Dinosaur": "Dinosaurier",
+      "Drumbloxian": "Drumbloxianer",
+      "Ferkisian": "Ferkisianer",
+      "Flansian": "Flansianer",
+      "Floovian": "Floovianer",
+      "Garblovian": "Garblovianer",
+      "Gazorpian": "Gazorpianer",
+      "Gear Person": "Zahnradmensch",
+      "Germaphobic species": "Keimphobische Spezies",
+      "Giant Telepathic Spider": "Riesige telepathische Spinne",
+      "Glorzo": "Glorzo",
+      "Gobbler": "Gobbler",
+      "Googa Alien": "Googa-Alien",
+      "Googa": "Googa",
+      "Gorpathian Dermak": "Gorpathischer Dermak",
+      "Greebybobe": "Greebybobe",
+      "Gromflomite": "Gromflomit",
+      "Grunglokian": "Grunglokianer",
+      "Hambrosian": "Hambrosianer",
+      "Hamster In Butt": "Hamster im Hintern",
+      "Harold": "Harold",
+      "Hell Demon": "Höllendämon",
+      "Hot Dog": "Hotdog",
+      "Hrinch": "Hrinch",
+      "Human": "Mensch"
     },
     "gender": {
       "Male": "Männlich",
@@ -24,5 +84,20 @@
       "Genderless": "Geschlechtslos",
       "unknown": "Unbekannt"
     }
-  }
+  },
+    "sort": {
+      "default": "Sortieren",
+      "nameAsc": "Name (A-Z)",
+      "nameDesc": "Name (Z-A)",
+      "originAsc": "Herkunft (A-Z)",
+      "originDesc": "Herkunft (Z-A)"
+    },
+    "filter": {
+      "default": "Filtern",
+      "statusAlive": "Status (Lebendig)",
+      "statusDead": "Status (Tot)",
+      "speciesHuman": "Spezies (Mensch)",
+      "speciesAlien": "Spezies (Außerirdisch)",
+      "speciesPoopybutthole": "Spezies (Poopybutthole)"
+    }
 }

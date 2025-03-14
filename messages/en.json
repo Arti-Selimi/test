@@ -1,4 +1,11 @@
 {
+  "Footer": {
+    "English": "English",
+    "German": "German",
+    "2025": "2025",
+    "company_name": "Arti",
+    "rights_reserved": "All Rights Reserved"
+  },
   "Navbar": {
     "title": "Welcome to the Character List",
     "checkAPI": "Check out the API",
@@ -14,9 +21,62 @@
       "unknown": "Unknown"
     },
     "species": {
-      "Human": "Human",
       "Alien": "Alien",
-      "Robot": "Robot"
+      "Animal": "Animal",
+      "Humanoid": "Humanoid",
+      "unknown": "Unknown",
+      "Poopybutthole": "Poopybutthole",
+      "Mythological Creature": "Mythological Creature",
+      "Robot": "Robot",
+      "Disease": "Disease",
+      "Alphabetrian": "Alphabetrian",
+      "Amfiddian": "Amfiddian",
+      "Arbolian Mentirososian": "Arbolian Mentirososian",
+      "Bepisian": "Bepisian",
+      "Bird Person": "Bird Person",
+      "Blamph": "Blamph",
+      "Bliznarvian": "Bliznarvian",
+      "Bluubosian": "Bluubosian",
+      "Boobloosian": "Boobloosian",
+      "Borpocian": "Borpocian",
+      "Brogh": "Brogh",
+      "Brosephamon": "Brosephamon",
+      "Buttmouth": "Buttmouth",
+      "Changeformer": "Changeformer",
+      "Chud": "Chud",
+      "Ciancan": "Ciancan",
+      "Courier Flap": "Courier Flap",
+      "Crittendian": "Crittendian",
+      "Cromulon": "Cromulon",
+      "Cronenberg": "Cronenberg",
+      "Crow Alien": "Crow Alien",
+      "Crustolomon": "Crustolomon",
+      "Dangelian": "Dangelian",
+      "Dinosaur": "Dinosaur",
+      "Drumbloxian": "Drumbloxian",
+      "Ferkisian": "Ferkisian",
+      "Flansian": "Flansian",
+      "Floovian": "Floovian",
+      "Garblovian": "Garblovian",
+      "Gazorpian": "Gazorpian",
+      "Gear Person": "Gear Person",
+      "Germaphobic species": "Germaphobic species",
+      "Giant Telepathic Spider": "Giant Telepathic Spider",
+      "Glorzo": "Glorzo",
+      "Gobbler": "Gobbler",
+      "Googa Alien": "Googa Alien",
+      "Googa": "Googa",
+      "Gorpathian Dermak": "Gorpathian Dermak",
+      "Greebybobe": "Greebybobe",
+      "Gromflomite": "Gromflomite",
+      "Grunglokian": "Grunglokian",
+      "Hambrosian": "Hambrosian",
+      "Hamster In Butt": "Hamster In Butt",
+      "Harold": "Harold",
+      "Hell Demon": "Hell Demon",
+      "Hot Dog": "Hot Dog",
+      "Hrinch": "Hrinch",
+      "Human": "Human"
     },
     "gender": {
       "Male": "Male",
@@ -24,5 +84,20 @@
       "Genderless": "Genderless",
       "unknown": "Unknown"
     }
+  },
+  "sort": {
+    "default": "Sort",
+    "nameAsc": "Name (A-Z)",
+    "nameDesc": "Name (Z-A)",
+    "originAsc": "Origin (A-Z)",
+    "originDesc": "Origin (Z-A)"
+  },
+  "filter": {
+    "default": "Filter",
+    "statusAlive": "Status (Alive)",
+    "statusDead": "Status (Dead)",
+    "speciesHuman": "Species (Human)",
+    "speciesAlien": "Species (Alien)",
+    "speciesPoopybutthole": "Species (Poopybutthole)"
   }
 }
