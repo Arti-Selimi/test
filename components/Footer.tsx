@@ -8,7 +8,7 @@ export default function Footer() {
   const t = useTranslations("Footer");
 
   return (
-    <div className="flex items-center justify-around w-[50%] p-5 fixed bottom-0 text-accent">
+    <div className="flex items-center justify-around w-[60%] p-5 relative bottom-0 text-accent">
       <div className="flex gap-5">
         <Link
           className="cursor-pointer opacity-80 hover:opacity-100"

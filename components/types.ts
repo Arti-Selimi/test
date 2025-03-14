@@ -26,3 +26,7 @@ export interface Character {
     page: number;
   }
   
+    export interface Options {
+      value: string,
+      label: string
+    }

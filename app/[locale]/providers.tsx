@@ -1,18 +1,17 @@
 "use client";
 
 import { NextIntlClientProvider } from "next-intl";
+import { ReactNode } from "react";
 
 export default function Providers({
   children,
   locale,
   messages,
 }: {
-  children: React.ReactNode;
+  children: ReactNode;
   locale: string;
-  messages: Record<string, any>;
+  messages: Record<string, null>;
 }) {
-  console.log("🟢 DEBUG: Providers received locale ->", locale);
-  console.log("🟢 DEBUG: Providers received messages ->", messages);
 
   return (
     <NextIntlClientProvider locale={locale} messages={messages}>

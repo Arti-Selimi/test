@@ -1,45 +1,80 @@
 import React from "react";
-import Dropdown from "../Dropdown";
 import { useTranslations } from "next-intl";
+import Select, { MultiValue } from "react-select";
+import { Options } from "../types";
 
 type Props = {
-    setSpecies: React.Dispatch<React.SetStateAction<any>>;
-    setFilter: React.Dispatch<React.SetStateAction<boolean>>;
+  setFilterOptions: React.Dispatch<React.SetStateAction<string[]>>;
 };
 
-export default function Filter({setSpecies, setFilter}: Props) {
+export default function Filter({ setFilterOptions }: Props) {
   const t = useTranslations("filter");
 
-  const handleDropdownChange = (value: string) => {
-    setFilter(true)
-    if(value === "Species (Human)" || value === "Spezies (Mensch)") {
-        setSpecies("Human")
-    } else if(value === "Species (Alien)" || value === "Spezies (Außerirdisch)") {
-        setSpecies("Alien")
-    }else if(value === "Species (Poopybutthole)" || value === "Spezies (Poopybutthole)") {
-        setSpecies("Poopybutthole")
-    }else if(value === "Status (Alive)" || value === "Status (Lebendig)") {
-        setSpecies("Alive")
-    }else if(value === "Status (Dead)" || value === "Status (Tot)") {
-        setSpecies("Dead")
-    } else {
-        setSpecies("")
-        setFilter(false)
+  const handleDropdownChange = (
+    selectedOptions: MultiValue<Options>,
+  ) => {
+    console.log(selectedOptions);
+    if (!selectedOptions) {
+      setFilterOptions([]);
+      return;
     }
+
+    setFilterOptions(selectedOptions.map((option) => option.value));
   };
 
   return (
-    <Dropdown
+    <Select
       options={[
-        t("statusAlive"),
-        t("statusDead"),
-        t("speciesHuman"),
-        t("speciesAlien"),
-        t("speciesPoopybutthole"),
+        { value: "Alive", label: t("statusAlive") },
+        { value: "Dead", label: t("statusDead") },
+        { value: "Human", label: t("speciesHuman") },
+        { value: "Alien", label: t("speciesAlien") },
+        { value: "Poopybutthole", label: t("speciesPoopybutthole") },
       ]}
-      defaultValue={t("default")}
+      isMulti
+      placeholder={t("default")}
       onChange={handleDropdownChange}
-      className="text-white p-1 rounded-[5px] border-2 border-accent"
+      className="w-full font-l"
+      styles={{
+        control: (base) => ({
+          ...base,
+          backgroundColor: "#001124", 
+          borderColor: "#64748B", 
+          color: "#F1F5F9", 
+          borderRadius: "8px",
+        }),
+        option: (base, { isFocused, isSelected }) => ({
+          ...base,
+          backgroundColor: isSelected ? "#A35852" : isFocused ? "#A35852" : "#001124",
+          color: isSelected ? "#FFFFFF" : "#F1F5F9",
+          padding: "10px",
+          cursor: "pointer",
+        }),
+        multiValue: (base) => ({
+          ...base,
+          backgroundColor: "#A35852",
+          color: "#FFFFFF",
+          borderRadius: "5px",
+          cursor: "pointer"
+        }),
+        multiValueLabel: (base) => ({
+          ...base,
+          color: "#FFFFFF",
+          cursor: "pointer"
+        }),
+        multiValueRemove: (base) => ({
+          ...base,
+          color: "#F1F5F9",
+          ":hover": {
+            backgroundColor: "#A35852",
+            color: "#FFFFFF",
+          },
+        }),
+        placeholder: (base) => ({
+          ...base,
+          color: "#CBD5E1",
+        }),
+      }}
     />
   );
 }
