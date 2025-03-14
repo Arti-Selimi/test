@@ -47,8 +47,8 @@ export default function CharacterList() {
     );
 
   return (
-    <div className="flex flex-col align-center justify-center px-10 py-5 w-[90%]">
-      <div className="flex gap-2 mb-5 items-center">
+    <div className="flex flex-col align-center justify-center px-10 py-5 w-full">
+      <div className="flex flex-col md:flex-row gap-2 mb-5 items-center">
         <Sort
           data={data}
           onSortChange={setSelectedSort}
@@ -68,21 +68,21 @@ export default function CharacterList() {
           .map((character) => (
             <div
               key={character.id}
-              className="flex items-center justify-start bg-primary rounded-xl h-50 hover:shadow-[0_0_5px] cursor-pointer transition-all"
+              className="flex flex-col sm:flex-row md:h-max items-center justify-start bg-primary rounded-xl hover:shadow-[0_0_5px] cursor-pointer transition-all"
             >
               <Image
                 src={character.image}
                 alt={character.name}
                 width={150}
                 height={150}
-                className="rounded-l-xl h-50 w-auto"
+                className="rounded-xl h-50 w-full sm:w-min md:w-auto"
               />
               <div className="text-accent h-full p-5 flex flex-col items-start">
-                <div className="font-extrabold">
+                <div className="font-extrabold text-center sm:text-left w-full">
                   <h1 className="text-2xl hover:text-current">
                     {character.name}
                   </h1>
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center justify-center sm:justify-start gap-2 text-center sm:text-left w-full">
                     <div
                       className={`rounded-full size-2 ${
                         character.status === "Alive"
@@ -96,7 +96,7 @@ export default function CharacterList() {
                     {t(`species.${character.species}`)}
                   </div>
                 </div>
-                <div>
+                <div className="text-center sm:text-left w-full">
                   <p>{t(`gender.${character.gender}`)}</p>
                   <p>{character.origin.name}</p>
                 </div>

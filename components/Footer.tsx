@@ -8,8 +8,8 @@ export default function Footer() {
   const t = useTranslations("Footer");
 
   return (
-    <div className="flex items-center justify-around w-[60%] p-5 relative bottom-0 text-accent">
-      <div className="flex gap-5">
+    <div className="flex flex-col md:flex-row items-center justify-center gap-2 w-full md:w-[60%] p-5 relative bottom-0 text-accent">
+      <div className="flex gap-2">
         <Link
           className="cursor-pointer opacity-80 hover:opacity-100"
           href="/en"
@@ -22,6 +22,7 @@ export default function Footer() {
         >
           {t("German")}
         </Link>
+        ||
       </div>
       <div className="">
         © {t("2025")} {t("company_name")}. {t("rights_reserved")}

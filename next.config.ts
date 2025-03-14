@@ -3,7 +3,7 @@ import createNextIntlPlugin from "next-intl/plugin";
 
 const nextConfig: NextConfig = {
   images: {
-    domains: ["rickandmortyapi.com"], // Add this line
+    domains: ["rickandmortyapi.com"],
   },
 };
 
