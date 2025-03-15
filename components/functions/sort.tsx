@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Select from "react-select";
 import { useTranslations } from "next-intl";
-import { CharactersData, Character } from "../types";
+import { CharactersData, Character } from "../../types/types";
 
 type Props = {
   data: CharactersData | undefined;

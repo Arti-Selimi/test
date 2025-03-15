@@ -1,7 +1,7 @@
 "use client";
 
 import { useQuery } from "@apollo/client";
-import { Character, CharactersData, CharactersVars } from "./types";
+import { Character, CharactersData, CharactersVars } from "../types/types";
 import { InView } from "react-intersection-observer";
 import { useState, useEffect } from "react";
 import { useTranslations } from "next-intl";

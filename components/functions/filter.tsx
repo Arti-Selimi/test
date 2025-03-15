@@ -1,7 +1,7 @@
 import React from "react";
 import { useTranslations } from "next-intl";
 import Select, { MultiValue } from "react-select";
-import { Options } from "../types";
+import { Options } from "../../types/types";
 
 type Props = {
   setFilterOptions: React.Dispatch<React.SetStateAction<string[]>>;
