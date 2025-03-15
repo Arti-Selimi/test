@@ -1,20 +1,13 @@
-"use client"
-import { ReactNode, useEffect } from "react";
-import { redirect } from "next/navigation";
+import React from "react";
 
-export default function Layout({ children }: { children: ReactNode }) {
-  useEffect(() => {
-    if (window.location.pathname === "/") {
-      redirect("/en");
-    }
-  }, []);
-
+export default async function Layout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en">
-      <head>
-        <title>My App</title>
-      </head>
-          {children}
+      <body className="bg-primary">{children}</body>
     </html>
   );
 }

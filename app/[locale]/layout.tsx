@@ -15,12 +15,8 @@ export default async function Layout({
   );
 
   return (
-    <html lang={locale}>
-      <body className="bg-primary">
-        <Providers locale={locale} messages={messages}>
-          {children}
-        </Providers>
-      </body>
-    </html>
+    <Providers locale={locale} messages={messages}>
+      {children}
+    </Providers>
   );
 }
