@@ -24,7 +24,7 @@ export default function Footer() {
         </Link>
         ||
       </div>
-      <div className="">
+      <div className="text-center">
         © {t("2025")} {t("company_name")}. {t("rights_reserved")}
       </div>
       <div>
