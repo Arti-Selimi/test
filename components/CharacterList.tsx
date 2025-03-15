@@ -5,10 +5,10 @@ import { Character, CharactersData, CharactersVars } from "./types";
 import { InView } from "react-intersection-observer";
 import { useState, useEffect } from "react";
 import { useTranslations } from "next-intl";
-import { GET_CHARACTERS } from "./API/get";
+import { GET_CHARACTERS } from "../API/get";
 import Sort from "./functions/sort";
 import Filter from "./functions/filter";
-import handleLoadMore from "./API/handleLoad";
+import handleLoadMore from "../API/handleLoad";
 import Image from "next/image";
 
 export default function CharacterList() {

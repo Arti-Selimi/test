@@ -10,7 +10,7 @@ export default async function Layout({
 }) {
   const { locale } = await params;
 
-  const messages = await import(`@/messages/${locale}.json`).then(
+  const messages = await import(`@/locales/${locale}.json`).then(
     (mod) => mod.default
   );
 

@@ -1,6 +1,6 @@
 import React from "react";
 import { FetchMoreQueryOptions, ApolloQueryResult } from "@apollo/client";
-import { CharactersData, CharactersVars } from "../types";
+import { CharactersData, CharactersVars } from "../components/types";
 
 type Props = {
   scroll: boolean;
