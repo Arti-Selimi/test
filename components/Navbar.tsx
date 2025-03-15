@@ -1,7 +1,7 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import logo from "@/public/logo.png";
 import Image from "next/image";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
