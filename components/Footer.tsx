@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "@/i18n/navigation";
+import { redirect } from "next/navigation";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import logo from "@/public/logo.png";
@@ -10,18 +10,18 @@ export default function Footer() {
   return (
     <div className="flex flex-col md:flex-row items-center justify-center gap-2 w-full md:w-[60%] p-5 relative bottom-0 text-accent">
       <div className="flex gap-2">
-        <Link
+        <div
           className="cursor-pointer opacity-80 hover:opacity-100"
-          href="/en"
+          onClick={() => redirect("/en")}
         >
-          {t(`English`)}
-        </Link>
-        <Link
+          {t("English")}
+        </div>
+        <div
           className="cursor-pointer opacity-80 hover:opacity-100"
-          href="/de"
+          onClick={() => redirect("/de")}
         >
           {t("German")}
-        </Link>
+        </div>
         ||
       </div>
       <div className="text-center">
